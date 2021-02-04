@@ -1,0 +1,124 @@
+<style type="text/css">
+  form.empForm label.error {
+        display: none;
+ 
+    }
+    form .error{
+      font-size: 13px !important;
+      color: #FF0000;
+ 
+    }
+    textarea.error{ border: 1px solid #FF0000 !important;}
+    .p-container h4{
+      margin:1em;
+    }
+  </style>
+
+<section class="content">
+    <div class="container">
+      <div class="row" style="margin-top: 35px;">
+       
+        <div class="col-md-12">
+          
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Add Employee</h3>
+            </div>
+            
+            <form class="empForm"  id="empForm" name="empForm">
+              <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="employeeName"> Name</label>
+                    <input type="Name" class="form-control" id="employeeName" name="employeeName" placeholder="Enter Name" >
+                  </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="employeeMobileNo">Mobile Number</label>
+                        <input type="number" class="form-control" id="employeeMobileNo" name="employeeMobileNo" placeholder="Mobile Number">
+                      </div>
+                          </div>
+                </div>
+               
+               
+              
+                <div class="row">
+                  <div class="col-sm-6">
+              <div class="form-group">
+                  <label>Address</label>
+                  <input class="form-control" rows="3" id="employeeAddress" name="employeeAddress" placeholder="Address">
+               </div>
+                  </div>
+                  <div class="col-sm-6">
+                     
+                  </div>
+              </div>
+               
+              
+              <div class="col-sm-12 text-center">
+                  <div class="form-group">
+            
+                <button type="submit" class="btn-lg btn-primary">Submit</button>
+               
+              </div>
+              </div>
+            </div>
+            </form>
+          
+             </div>
+         
+        </div>
+        
+         </div>
+          
+           </div>
+       
+          </div>
+          </section>
+          
+            <script>
+              $(document).ready(function(){
+       
+                   $("form[name='empForm']").validate({
+                       rules:{
+                        employeeName:"required",
+                        employeeAddress:"required",
+                           
+                           employeeMobileNo: {
+                               required:true,
+                               
+                               maxlength: 10,
+                               minlength: 10
+       
+       
+                           },
+                          
+                           
+       
+       
+                       },
+                       messages: {
+                       
+                           employeeAddress:"Please Enter your Address",
+                           employeeName: "Please Enter Your Name",
+                          
+                           employeeMobileNo: {
+                               required:"Please Enter Your Mobile Number",
+                              
+                               maxlength:"mobile lenght should be 10 digits",
+                               minlength:"mobile lenght should be 10 digits"
+                           },
+                          
+                           
+                          
+                       },
+       
+                      
+               })
+       
+              });
+       
+       
+              </script>

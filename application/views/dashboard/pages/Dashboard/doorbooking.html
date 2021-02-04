@@ -1,0 +1,179 @@
+<style type="text/css">
+ form.doorbookingForm label.error {
+       display: none;
+
+   }
+   form .error{
+     font-size: 13px !important;
+     color: #FF0000;
+
+   }
+   textarea.error{ border: 1px solid #FF0000 !important;}
+   .p-container h4{
+     margin:1em;
+   }
+ </style>
+
+
+<section class="content">
+    <div class="container">
+      <div class="row" style="margin-top: 35px;">
+      
+        <div class="col-md-12">
+         
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Door Booking</h3>
+            </div>
+            
+            <form class="doorbookingForm" id="doorbookingForm" name="doorbookingForm">
+                <div class="card-body">
+                  <div class="row">
+                      <div class="col-sm-6">
+                  <div class="form-group">
+                      <label for="customerName"> Name</label>
+                      <input type="Name" class="form-control" id="customerName" name="customerName" placeholder="Enter Name" >
+                    </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select class="form-control" id="customerGender" name="customerGender">
+                              <option style="display:none"></option>
+                              <option>Male</option>
+                              <option>female</option>
+                              
+                            </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="customerMobileNumber">Mobile Number</label>
+                    <input type="number" class="form-control" id="customerMobileNumber" name="customerMobileNumber" placeholder="Mobile Number">
+                  </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group" >
+                            <label>Category</label>
+                            <select class="form-control" id="customerCategory" name="customerCategory">
+                              <option style="display:none"></option>
+                              <option>haircut</option>
+                              <option>haircolor</option>
+                              
+                            </select>
+                          </div>
+                      </div>
+                  </div>
+                 
+                
+                  <div class="row">
+                    <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="customerAddress">Address</label>
+                    <input class="form-control" rows="3" id="customerAddress" name="customerAddress" placeholder="Address">
+                 </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="form-group">
+                        <label>Date:</label>
+                        
+                              <input type="date" class="form-control "   id="bookingdate"  name="bookingdate"/>
+                            
+                        
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="form-group">
+                          <label>Time</label>
+                          <select class="form-control" id="bookingtime" name="bookingtime">
+                            <option style="display:none"></option>
+                            <option>8am to 9am</option>
+                            <option>9am to 10am</option>
+                            <option>10am to 11am</option>
+                            <option>11am to 12pm</option>
+                            <option>12pm to 3pm</option>
+                            <option>3pm to 5pm</option>
+                            
+                          </select></div>
+                  </div>
+                </div>
+                 
+                
+                <div class="col-sm-12 text-center">
+                    <div class="form-group">
+               
+                  <button type="submit" class="btn-lg btn-primary">Submit</button>
+                 
+                        
+                        </div>
+                      </div>
+                    </div>
+                        </form>
+                    
+                      </div>
+                    
+                  </div>
+                  
+                  </div>
+                  
+                    </div>
+                
+                   
+                 
+                    </section>
+                    <script>
+                      $(document).ready(function(){
+               
+                           $("form[name='doorbookingForm']").validate({
+                               rules:{
+                                customerName:"required",
+                                customerGender:"required",
+                                customerCategory:"required",
+                                customerAddress:"required",
+                                bookingdate:"required",
+                                bookingtime:"required",
+                                   customerMobileNumber: {
+                                       required:true,
+                                       
+                                       maxlength: 10,
+                                       minlength: 10
+               
+               
+                                   },
+                                  
+                                   
+               
+               
+                               },
+                               messages: {
+                               
+                                customerName:"Please Enter Customer Name",
+                                   customerGender: "Please Select Your Gender",
+                                   customerCategory: "Please Select Your Category",
+                                   customerAddress: "Please Enter Your Address",
+                                   bookingdate: "Please Enter Booking Date",
+                                   bookingtime: "Please Enter Booking Time",
+
+
+                                   
+                                   customerMobileNumber: {
+                                       required:"Please Enter Mobile Number",
+                                      
+                                       maxlength:"mobile Lenght Should Be 10 Digits",
+                                       minlength:"mobile Lenght Should Be 10 Digits"
+                                   },
+                                  
+                                   
+                                  
+                               },
+               
+                              
+                       })
+               
+                      });
+               
+               
+                      </script>
+         

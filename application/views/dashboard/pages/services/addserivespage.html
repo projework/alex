@@ -1,0 +1,148 @@
+<style type="text/css">
+  form.servicesForm label.error {
+        display: none;
+ 
+    }
+    form .error{
+      font-size: 13px !important;
+      color: #FF0000;
+ 
+    }
+    textarea.error{ border: 1px solid #FF0000 !important;}
+    .p-container h4{
+      margin:1em;
+    }
+  </style>
+
+<section class="content">
+    <div class="container">
+      <div class="row" style="margin-top: 35px;">
+     
+        <div class="col-md-12">
+        
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Add Services</h3>
+            </div>
+          
+            <form class="servicesForm" id="servicesForm" name="servicesForm">
+                <div class="card-body">
+                  <div class="row">
+                      <div class="col-sm-6">
+                
+                  <div class="form-group">
+                    <label for="servicesTitle">Title</label>
+                    <input type="text" class="form-control" id="servicesTitle" name="servicesTitle" placeholder="Title ">
+                  </div>
+                      </div>
+                      <div class="col-sm-6">
+                        
+                         
+                            <div class="form-group">
+                              <label>Gender</label>
+                              <select class="form-control" id="servicesGender" name="servicesGender">
+                                <option style="display:none"></option>
+                                <option>male</option>
+                                <option>female</option>
+                                
+                                
+                              </select></div>
+                  </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-6">
+                  
+                    <div class="form-group">
+                      <label for="servicesDescription">Description</label>
+                      <textarea id="summernote" name="summernote" >
+                        Place <em>some</em> <u>text</u> <strong>here</strong>
+                      </textarea></div>
+                        </div>
+                        <div class="col-sm-6">
+                           
+                            
+                              <div class="form-group">
+                                <label for="servicesCategory">Category</label>
+                                <select class="form-control" id="servicesCategory" name="servicesCategory">
+                                  <option style="display:none"></option>
+                                  <option>hair cut</option>
+                                  <option>spa</option>
+                                  <option>makeup</option>
+                                  <option>hair color</option>
+                                  <option>waxing</option>
+                                  <option>facial</option>
+                                  
+                                </select></div>
+                    </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-sm-6">
+                   
+                      <div class="form-group">
+                        <label for="servicesImg">Image</label><br>
+                        <input type="file" id="servicesImg" name="servicesImg" accept="image/*">
+                      </div>
+                          </div>
+                          <div class="col-sm-6">
+                             
+                      </div>
+                          </div>
+
+                
+                <div class="col-sm-12 text-center">
+                    <div class="form-group">
+              
+                  <button type="submit" class="btn-lg btn-primary">Submit</button>
+                 
+                </div>
+              </div>
+            </div>
+              </form>
+          
+             </div>
+          
+        </div>
+       
+         </div>
+         
+           </div>
+        
+          
+          </section>
+         
+       
+           
+          <script>
+            $(function () {
+              // Summernote
+              $('#summernote').summernote()
+          
+              // CodeMirror
+              CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+              });
+            })
+          </script>
+            <script>
+              $(document).ready(function(){
+       
+                   $("form[name='servicesForm']").validate({
+                       rules:{
+                        servicesTitle:"required",
+                        servicesGender:"required",
+                        summernote:"required",
+                        servicesCategory:"required",
+                        servicesImg:"required", },
+                       messages: {
+                       
+                        servicesTitle:"Please Enter Title",
+                           servicesGender: "Please Select Your Gender",
+                           summernote: "Please Enter Description",
+                           servicesCategory: "Please Select Your Category",
+                           servicesImg: "Please Select Image",
+                           },
+                           })
+                           });
+                            </script>

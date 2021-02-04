@@ -1,0 +1,81 @@
+<!-- Main content -->
+<style type="text/css">
+
+
+  form.bannerImgForm label.error {
+       display: none;
+
+   }
+   form .error{
+     font-size: 13px !important;
+     color: #FF0000;
+
+   }
+   textarea.error{ border: 1px solid #FF0000 !important;}
+   .p-container h4{
+     margin:1em;
+   }
+
+
+
+
+
+  </style>
+<section class="content">
+    <div class="container">
+      <div class="row" style="margin-top: 35px;">
+       
+        <div class="col-md-12">
+        
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Banner Image</h3>
+            </div>
+           
+            <form class="bannerImgForm" id="bannerImgForm" name="bannerImgForm">
+                <div class="card-body">
+                  <div class="row">
+                      <div class="col-sm-12 text-center">
+                        <div class="form-group">
+                            <label for="bannerImg">Image</label><br>
+                            <input type="file" id="bannerImg" name="bannerImg" accept="image/*">
+                          </div>
+                      </div>
+                      
+                  </div>
+                   <div class="col-sm-12 text-center">
+                    <div class="form-group">
+               
+                  <button type="submit" class="btn-lg btn-primary">Upload</button>
+                 </div>
+                      </div>
+                    </div>
+                        </form>
+                    
+                      </div>
+                    
+                  </div>
+                  
+                  </div>
+                  
+                    </div>
+                
+                    
+                 
+                    </section>
+                    <script>
+                      $(document).ready(function(){
+               
+                           $("form[name='bannerImgForm']").validate({
+                               rules:{
+                                bannerImg:"required",
+                                },
+                               messages: {
+                               
+                                bannerImg:"Please Select Banner Image",
+                                   
+                                   },
+                                   })
+                                   });
+                     </script>
+         
